@@ -1,6 +1,6 @@
 
 <div align="center">
-    <img style="max-width: 320px " src="./assets/logo.png" />
+    <img style="max-width: 320px " src="./assets/Logo.png" />
 </div>
 <h1 align="center" >E-Sports - Mobile</h1 >
 <p align="center" >em construção ...</p>
