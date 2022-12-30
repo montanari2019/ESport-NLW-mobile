@@ -1,0 +1,1 @@
+export const baseURLFetch = "http://172.28.2.130:3232/"
