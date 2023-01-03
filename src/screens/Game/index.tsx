@@ -1,6 +1,6 @@
 
-import { View, TouchableOpacity, Image, FlatList } from "react-native"
-import {useEffect, useState} from "react"
+import { View, TouchableOpacity, Image, FlatList, Text } from "react-native"
+import { useEffect, useState } from "react"
 import { GameParams } from '../../@types/@navigation';
 import { useRoute, useNavigation } from "@react-navigation/native"
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -34,15 +34,15 @@ export function Game() {
 
 
         fetch(`http://172.28.2.130:3232/games/${game.id}/ads`)
-          .then((res) => res.json())
-          .then((res) => {
-            console.log(res)
-            setDuos(res)
-    
-          })
-          .catch((err) => { console.log(err) })
-    
-      }, [])
+            .then((res) => res.json())
+            .then((res) => {
+                console.log(res)
+                setDuos(res)
+
+            })
+            .catch((err) => { console.log(err) })
+
+    }, [])
 
     return (
         <Background>
@@ -70,25 +70,29 @@ export function Game() {
 
                 <Heading title={game.title} subtile="Conecte-se e comece a jogar!" />
 
-                
-               
+
+
 
                 <FlatList
                     data={duos}
                     keyExtractor={item => item.id}
-                    renderItem={({item})=>(
-                        <DuoCard data={item} onConnect={()=> {}}/>
+                    renderItem={({ item }) => (
+                        <DuoCard data={item} onConnect={() => { }} />
                     )}
                     horizontal
                     contentContainerStyle={styles.contentList}
-                    style={styles.containerList}
+                    style={[styles.containerList]}
                     showsHorizontalScrollIndicator={false}
+
+                    ListEmptyComponent={() => (
+                        <Text style={styles.textListEmpty}>Não há anuncios publicados ainda</Text>
+                    )}
 
 
                 />
 
 
-                
+
 
 
             </SafeAreaView>

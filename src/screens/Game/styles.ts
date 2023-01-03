@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { THEME } from '../../theme';
 
 export const styles = StyleSheet.create({
   container: {
@@ -40,5 +41,11 @@ export const styles = StyleSheet.create({
   },
   containerList:{
     width: "100%",
+  },
+  textListEmpty:{
+    color: THEME.COLORS.TEXT,
+    fontSize: THEME.FONT_SIZE.SM,
+    fontFamily: THEME.FONT_FAMILY.REGULAR,
+    
   }
 });
